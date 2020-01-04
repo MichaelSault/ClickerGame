@@ -5,13 +5,13 @@
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="clicker.css">
-        <title>Clicker Game</title>
+        <title>Pirate Clicker Game</title>
         <script src = "clicker.js"></script>
     </head>
 
     <body>
     	<div id = "top">
-    		<h1> Clicker Game </h1>
+    		<h1> Pirate Clicker Game </h1>
     		<details>
     			<summary>About</summary>
     			This is the first of a number of web based games I want to add to this site.  Inspired by cookie clicker, I figured this would be an easy way to start.
@@ -25,10 +25,10 @@
     	<div id = "game">
     		<a href=# onclick="add()"><img src="images/coin.png"></a>
     		<br><br>
-    		Coins:
-    		<input type= "text" id="text" disabled style= "text-align: center">
-            <br> CPS:
-            <input type= "text" id="cps" disabled style= "text-align: center">
+    		Doubloons:
+    		<input type= "text" id="doubloons" disabled style= "text-align: center">
+            <br> DPS:
+            <input type= "text" id="dps" disabled style= "text-align: center">
             <br>
 
             <button> <a href="#" id="save()"> Save </a></button>
@@ -36,17 +36,48 @@
             
             <details>
                 <summary>Upgrades</summary>
-                <details><summary>Auto Clicker</summary>
-                    <p>Buy 1 Auto Clicker</p>
-                        <button><a href = "#" onClick="buyAutoClick()"><img src="images/mouse.png" width="30px" height="40px"></a></button>
-                        <p id="costAutoClick"> 12 Cookies</p>
-                        <p id="ammountAutoClick"> You own 0 Auto Clickers</p>
+                <details><summary>Scallywags</summary>
+                    <p>Hire 1 Scallywag</p>
+                        <button><a href = "#" onClick="buyScallywags()"><img src="images/mouse.png" width="30px" height="40px"></a></button>
+                        <p id="costScallywags"> 5 Doubloons</p>
+                        <p id="ammountScallywags"> You own 0 Scallywags</p>
                 </details>
-                <details><summary>Miner</summary>
+                <details><summary>Pirates</summary>
+                    <p>Hire 1 Pirate</p>
+                    <button><a href = "#" onClick="buyPirate()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costPirates"> 250 Doubloons</p>
+                    <p id="ammountPirates"> You employ 0 Pirates</p>
+                </details>
+    
+                <details><summary>First Mates</summary>
+                    <p>Hire 1 First Mate</p>
+                    <button><a href = "#" onClick="buyFMate()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costFMates"> 1000 Doubloons</p>
+                    <p id="ammountFMates"> You employ 0 First Mates</p>
+                </details>
+                <details><summary>Captains</summary>
+                    <p>Hire 1 Captain</p>
+                    <button><a href = "#" onClick="buyCaptain()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costCaptains"> 50000 Doubloons</p>
+                    <p id="ammountCaptains"> You employ 0 Captains</p>
+                </details>
+                <details><summary>Sloops</summary>
+                    <p>Buy 1 Sloop</p>
+                    <button><a href = "#" onClick="buySloop()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costSloops"> 2500000 Doubloons</p>
+                    <p id="ammountSloops"> You own 0 Sloops</p>
+                </details>
+                <details><summary>Brigantines</summary>
                     <p>Buy 1 Miner</p>
-                    <button><a href = "#" onClick="buyMiner()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
-                    <p id="costMiners"> 36 Cookies</p>
-                    <p id="ammountMiners"> You own 0 Miners</p>
+                    <button><a href = "#" onClick="buyBrigantine()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costBrigantines"> 10000000 Doubloons</p>
+                    <p id="ammountBrigantines"> You own 0 Brigantines</p>
+                </details>
+                <details><summary>Galleons</summary>
+                    <p>Buy 1 Galleon</p>
+                    <button><a href = "#" onClick="buyGalleon()"><img src="images/pickaxe.png" width="30px" height="40px"></a></button>
+                    <p id="costGalleons"> 1000000000 Doubloons</p>
+                    <p id="ammountGalleons"> You own 0 Galleons</p>
                 </details>
             </details>
 
