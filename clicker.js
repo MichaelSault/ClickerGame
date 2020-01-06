@@ -35,8 +35,8 @@ function update() {
 }
 
 function timer(){
-    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*50000) + (spaceships*100000);
-    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*50000) + (spaceships*100000);
+    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
+    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
     manualClick = 1+Math.round(dps*0.1);
     update();
 }
@@ -117,6 +117,8 @@ function buySloop() {
             pirates = pirates - 20;
             firstmates = firstmates - 5;
             captains = captains - 1;
+
+            sloops = sloops + 1;
         }
     }
 }
@@ -128,6 +130,8 @@ function buyBrigantine() {
             pirates = pirates - 50;
             firstmates = firstmates - 10;
             captains = captains - 2;
+
+            brigantines = brigantines + 1;
         }
     }
 }
@@ -139,6 +143,8 @@ function buyGalleon() {
             pirates = pirates - 100;
             firstmates = firstmates - 50;
             captains = captains - 5;
+
+            galleons = galleons + 1;
         }
     }
 }
@@ -159,6 +165,8 @@ function buySpaceShip() {
                 pirates = pirates - 200;
                 firstmates = firstmates - 100;
                 captains = captains - 50;
+
+                spaceships = spaceships + 1;
             }
         }
     }
