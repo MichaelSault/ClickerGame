@@ -9,11 +9,15 @@ var galleons = 0;
 var spaceships = 0;
 var dps = 0;
 var manualClick = 1;
-var alienTech = false;
+var alienTech = 0;
+
+function removeSpaceship() {
+    document.getElementById('spaceship').style.display = 'none';
+}
 
 function update() {
-    document.getElementById('doubloons').value = balance;
-    document.getElementById('dps').value = dps;
+    document.getElementById('doubloons').innerHTML = "Doubloons: " + balance;
+    document.getElementById('dps').innerHTML = "DPS: " + dps;
 
     document.title = balance + " Doubloons";
     document.getElementById('ammountScallywags').innerHTML = "You own " + Scallywags + " Scallywags";
@@ -30,8 +34,8 @@ function update() {
     document.getElementById('costBrigantines').innerHTML = (50000000*(brigantines+1)) + " Doubloons";
     document.getElementById('ammountGalleons').innerHTML = "You own " + galleons + " Galleons";
     document.getElementById('costGalleons').innerHTML = (1000000000*(galleons+1)) + " Doubloons";
-    document.getElementById('ammountSpaceShips').innerHTML = "You own " + spaceships + " Pirate Space Ships";
-    document.getElementById('costSpaceShips').innerHTML = (1000000000000*(spaceships+1)) + " Doubloons";
+    document.getElementById('ammountSpaceShip').innerHTML = "You own " + spaceships + " Pirate Space Ships";
+    document.getElementById('costSpaceShip').innerHTML = (1000000000000*(spaceships+1)) + " Doubloons";
 }
 
 function timer(){
@@ -44,40 +48,6 @@ setInterval(timer, 1000);
 
 function add() {
     balance = balance + manualClick;
-    update();
-}
-
-function save() {
-    localStorage.setItem("balance", balance);
-    localStorage.setItem("Scallywags", Scallywags);
-    localStorage.setItem("pirates", pirates);
-    localStorage.setItem("firstmates", firstmates);
-    localStorage.setItem("captains", captains);
-    localStorage.setItem("sloops", sloops);
-    localStorage.setItem("brigantines", brigantines);
-    localStorage.setItem("galleons", galleons);
-    localStorage.setItem("spaceships", spaceships);
-}
-
-function load() {
-    balance = localStorage.getItem("balance");
-    balance = parseInt(balance);
-    Scallywags = localStorage.getItem("Scallywags");
-    Scallywags = parseInt(Scallywags);
-    pirates = localStorage.getItem("pirates");
-    pirates = parseInt(pirates);
-    firstmates = localStorage.getItem("firstmates");
-    firstmates = parseInt(firstmates);
-    captains = localStorage.getItem("captains");
-    captains = parseInt(captains);
-    captains = localStorage.getItem("sloops");
-    captains = parseInt(sloops);
-    captains = localStorage.getItem("brigantines");
-    captains = parseInt(brigantines);
-    captains = localStorage.getItem("galleons");
-    captains = parseInt(galleons);
-    captains = localStorage.getItem("spaceships");
-    captains = parseInt(spaceships);
     update();
 }
 
@@ -121,6 +91,7 @@ function buySloop() {
             sloops = sloops + 1;
         }
     }
+    update();
 }
 function buyBrigantine() {
     if (balance >= (50000000*(brigantines+1))){
@@ -134,7 +105,9 @@ function buyBrigantine() {
             brigantines = brigantines + 1;
         }
     }
+    update();
 }
+
 function buyGalleon() {
     if (balance >= (1000000000*(galleons+1))){
         if ((Scallywags >= 50)&&(pirates >= 100)&&(firstmates >= 50)&&(captains >= 5)){
@@ -147,17 +120,21 @@ function buyGalleon() {
             galleons = galleons + 1;
         }
     }
+    update();
 }
 
 function buyAlienTech() {
     if (balance >= 500000000000){
         balance = balance - 500000000000;
-        alienTech = true;
+        alienTech = 1;
+        document.getElementById('spaceship').style.display = 'block';
+        document.getElementById('alienTech').style.display = 'none';
     }
+    update();
 }
 
 function buySpaceShip() {
-    if (alienTech == true){
+    if (alienTech = 1){
         if (balance >= (1000000000000*(spaceships+1))){
             if ((Scallywags >= 200)&&(pirates >= 200)&&(firstmates >= 100)&&(captains >= 50)){
                 balance = balance - (1000000000000*(spaceships+1));
@@ -170,4 +147,5 @@ function buySpaceShip() {
             }
         }
     }
+    update();
 }

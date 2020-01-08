@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
 <html>
+    <div class="topnav">
+        <a class="active">Home</a>
+        <a href="About.html" target="_blank">About</a>
+        <a href="Rules.html" target="_blank">Rules</a>
+    </div>
 	<head>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +14,15 @@
         <script src = "clicker.js"></script>
     </head>
 
-    <body>
+    <body onload="removeSpaceship()">
     	<div id = "top" class = "colcontainer">
     		<h1> Doubloon Clicker </h1>
-            <div id = "about" class = "twocol">
-        		<details>
-        			<summary>About</summary>
-        			This is the first of a number of web based games I want to add to this site.  Inspired by cookie clicker, I figured this would be an easy way to start.
-        		</details>
-            </div>
-            <div id = "rules" class = "twocol">
-        		<details>
-        			<summary>How To Play</summary>
-        			This game plays like a standard <i><b>clicker game</b></i> in that you begin by clicking a button to receive a coin and work your way up to be able to purchase upgrades which will eventually automate the clicking process for you.
-        		</details>
-            </div>
         </div>
 
         <div id = "doubloon" class = "center">
-    		<a href=# onclick="add()"><img src="images/coin.png" width="250px" height="250px"></a>
-    		<br><br>
-    		Doubloons:
-    		<input type= "text" id="doubloons" disabled style= "text-align: center">
-            <br> DPS:
-            <input type= "text" id="dps" disabled style= "text-align: center">
-            <br>
-
-            <button> <a href="#" id="save()"> Save </a></button>
-            <button> <a href="#" id="load()"> Load </a></button>    
+    		<a href=# onclick="add()"><img src="images/coin.png" width="200px" height="200px"></a>
+            <h3 id="doubloons"> Doubloons: 0 </h3>
+            <h3 id="dps"> DPS: 0 </h3>
         </div>
 
             <div id = "pirateShop" class="colcontainer">
@@ -44,25 +30,25 @@
                 <summary>Pirates</summary>
                 <div id = "scallywag" class="col">
                     <h3>Hire 1 Scallywag</h3>
-                    <button><a href = "#" onClick="buyScallywags()"><img src="images/Scallywag.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyScallywags()"><img src="images/Scallywag.png" width="75px" height="75px"></a>
                     <p id="costScallywags"> 5 Doubloons</p>
                     <p id="ammountScallywags"> You own 0 Scallywags</p>
                 </div>
                 <div id = "pirate" class="col">
                     <h3>Hire 1 Pirate</h3>
-                    <button><a href = "#" onClick="buyPirate()"><img src="images/Pirate.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyPirate()"><img src="images/Pirate.png" width="75px" height="75px"></a>
                     <p id="costPirates"> 250 Doubloons</p>
                     <p id="ammountPirates"> You employ 0 Pirates</p>
                 </div>
                 <div id = "fMate" class="col">
                     <h3>Hire 1 First Mate</h3>
-                    <button><a href = "#" onClick="buyFMate()"><img src="images/FirstMate.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyFMate()"><img src="images/FirstMate.png" width="75px" height="75px"></a>
                     <p id="costFMates"> 1000 Doubloons</p>
                     <p id="ammountFMates"> You employ 0 First Mates</p>
                 </div>
                 <div id = "captain" class="col">
                     <h3>Hire 1 Captain</h3>
-                    <button><a href = "#" onClick="buyCaptain()"><img src="images/Captain.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyCaptain()"><img src="images/Captain.png" width="75px" height="75px"></a>
                     <p id="costCaptains"> 50000 Doubloons</p>
                     <p id="ammountCaptains"> You employ 0 Captains</p>
                 </div>
@@ -73,31 +59,37 @@
                 <summary>Ships</summary>
                 <div id = "sloop" class="col">
                     <h3>Buy 1 Sloop</h3>
-                    <button><a href = "#" onClick="buySloop()"><img src="images/pickaxe.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buySloop()"><img src="images/Pirate.png" width="75px" height="75px"></a>
                     <p id="costSloops"> 1000000 Doubloons</p>
                     <p id="resourcesSloops">50 Scallywags, 20 Pirates, 10 First Mates, 1 Captains</p>
                     <p id="ammountSloops"> You own 0 Sloops</p>
                 </div>
                 <div id = "brigantine" class="col">
                     <h3>Buy 1 Brigantine</h3>
-                    <button><a href = "#" onClick="buyBrigantine()"><img src="images/pickaxe.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyBrigantine()"><img src="images/Pirate.png" width="75px" height="75px"></a>
                     <p id="costBrigantines"> 50000000 Doubloons</p>
                     <p id="resourcesBrigatines">100 Scallywags, 50 Pirates, 10 First Mates, 2 Captains</p>
                     <p id="ammountBrigantines"> You own 0 Brigantines</p>
                 </div>
                 <div id = "galleon" class="col">
                     <h3>Buy 1 Galleon</h3>
-                    <button><a href = "#" onClick="buyGalleon()"><img src="images/pickaxe.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buyGalleon()"><img src="images/Pirate.png" width="75px" height="75px"></a>
                     <p id="costGalleons"> 1000000000 Doubloons</p>
                     <p id="resourcesGalleons">50 Scallywags, 100 Pirates, 50 First Mates, 5 Captains</p>
                     <p id="ammountGalleons"> You own 0 Galleons</p>
                 </div>
                 <div id = "spaceship" class="col">
                     <h3>Buy 1 Space Ship</h3>
-                    <button><a href = "#" onClick="buySpaceShip()"><img src="images/pickaxe.png" width="50px" height="60px"></a></button>
+                    <a href = "#" onClick="buySpaceShip()"><img src="images/Pirate.png" width="75px" height="75px"> </a>
                     <p id="costSpaceShip"> 1000000000000 Doubloons</p>
-                    <p id="resourcesSpaceShip">200 Scallywags, 200 Pirates, 100 First Mates, 50 Captains, Alien Tech</p>
+                    <p id="resourcesSpaceShip">200 Scallywags, 200 Pirates, 100 First Mates, 50 Captains</p>
                     <p id="ammountSpaceShip"> You own 0 Pirate Space Ships</p>
+                </div>
+                <div id = "alienTech" class="col">
+                    <h3>Research Alien Tech</h3>
+                    <a href = "#" onClick="buyAlienTech()"><img src="images/Pirate.png" width="75px" height="75px"> </a>
+                    <p id="costAlienTech"> 500000000000 Doubloons</p>
+                    Unlocks Pirate Space Ship
                 </div>
                 </details>
             </div>
