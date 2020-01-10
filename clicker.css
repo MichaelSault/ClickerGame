@@ -58,10 +58,6 @@ h3 {
     
 }
 
-.winner {
-    
-}
-
 @font-face {
     font-family: 'booter';
     src: url(fonts/BOOTERZZ.ttf);
@@ -69,6 +65,7 @@ h3 {
     font-weight: 100;
 }
 
+/* Navigation bar css taken from W3Schools */
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -136,7 +133,7 @@ h3 {
   cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .nomobile {
         display:none;
     }
@@ -149,19 +146,17 @@ h3 {
     
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 480px) {
     .onlymobile {
         display:none;
     }
 }
 
-/* Tooltip container */
 .tooltip {
     position: relative;
     display: inline-block;
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
@@ -171,7 +166,6 @@ h3 {
     padding: 5px 0;
     border-radius: 6px;
  
-  /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
     width: 120px;
@@ -180,7 +174,6 @@ h3 {
     margin-left: -60px;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
