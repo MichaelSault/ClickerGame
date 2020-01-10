@@ -13,6 +13,7 @@ var alienTech = 0;
 
 function removeSpaceship() {
     document.getElementById('spaceship').style.display = 'none';
+    document.getElementById('winner').style.display = 'none';
 }
 
 function update() {
@@ -20,13 +21,13 @@ function update() {
     document.getElementById('dps').innerHTML = "DPS: " + dps;
 
     document.title = balance + " Doubloons";
-    document.getElementById('ammountScallywags').innerHTML = "You own " + Scallywags + " Scallywags";
+    document.getElementById('ammountScallywags').innerHTML = "You have " + Scallywags + " Scallywags";
     document.getElementById('costScallywags').innerHTML = (5*(Scallywags+1)) + " Doubloons";
-    document.getElementById('ammountPirates').innerHTML = "You own " + pirates + " Pirates";
+    document.getElementById('ammountPirates').innerHTML = "You have " + pirates + " Pirates";
     document.getElementById('costPirates').innerHTML = (250*(pirates+1)) + " Doubloons";
-    document.getElementById('ammountFMates').innerHTML = "You own " + firstmates + " First Mates";
+    document.getElementById('ammountFMates').innerHTML = "You have " + firstmates + " First Mates";
     document.getElementById('costFMates').innerHTML = (1000*(firstmates+1)) + " Doubloons";
-    document.getElementById('ammountCaptains').innerHTML = "You own " + captains + " Captains";
+    document.getElementById('ammountCaptains').innerHTML = "You have " + captains + " Captains";
     document.getElementById('costCaptains').innerHTML = (50000*(captains+1)) + " Doubloons";
     document.getElementById('ammountSloops').innerHTML = "You own " + sloops + " Sloops";
     document.getElementById('costSloops').innerHTML = (1000000*(sloops+1)) + " Doubloons";
@@ -35,12 +36,14 @@ function update() {
     document.getElementById('ammountGalleons').innerHTML = "You own " + galleons + " Galleons";
     document.getElementById('costGalleons').innerHTML = (1000000000*(galleons+1)) + " Doubloons";
     document.getElementById('ammountSpaceShip').innerHTML = "You own " + spaceships + " Pirate Space Ships";
-    document.getElementById('costSpaceShip').innerHTML = (1000000000000*(spaceships+1)) + " Doubloons";
+    document.getElementById('costSpaceShip').innerHTML = (100000000000*(spaceships+1)) + " Doubloons";
 }
 
 function timer(){
     balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
+    
     dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
+    
     manualClick = 1+Math.round(dps*0.1);
     update();
 }
@@ -124,8 +127,8 @@ function buyGalleon() {
 }
 
 function buyAlienTech() {
-    if (balance >= 500000000000){
-        balance = balance - 500000000000;
+    if (balance >= 50000000000){
+        balance = balance - 50000000000;
         alienTech = 1;
         document.getElementById('spaceship').style.display = 'block';
         document.getElementById('alienTech').style.display = 'none';
@@ -135,15 +138,22 @@ function buyAlienTech() {
 
 function buySpaceShip() {
     if (alienTech = 1){
-        if (balance >= (1000000000000*(spaceships+1))){
+        if (balance >= (100000000000*(spaceships+1))){
             if ((Scallywags >= 200)&&(pirates >= 200)&&(firstmates >= 100)&&(captains >= 50)){
-                balance = balance - (1000000000000*(spaceships+1));
+                balance = balance - (100000000000*(spaceships+1));
                 Scallywags = Scallywags - 200;
                 pirates = pirates - 200;
                 firstmates = firstmates - 100;
                 captains = captains - 50;
 
                 spaceships = spaceships + 1;
+                
+                if (confirm("Congratulations! You made it to space and won the game! \n\nClick 'OK' to win or 'Cancel' to keep playing.")) {
+                    document.getElementById('winner').style.display = 'block';
+                    window.open("Winner.html");
+                } else {
+                    document.getElementById('winner').style.display = 'block';
+                }
             }
         }
     }
