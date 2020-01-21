@@ -10,10 +10,15 @@ var spaceships = 0;
 var dps = 0;
 var manualClick = 1;
 var alienTech = 0;
+var name = "temp";
 
 function removeSpaceship() {
     document.getElementById('spaceship').style.display = 'none';
     document.getElementById('winner').style.display = 'none';
+}
+
+function namePrompt() {
+    var name = prompt("Welcome Pirate! What is your name?", "Captain Scurvybeard")
 }
 
 function update() {
@@ -148,7 +153,7 @@ function buySpaceShip() {
 
                 spaceships = spaceships + 1;
                 
-                if (confirm("Congratulations! You made it to space and won the game! \n\nClick 'OK' to win or 'Cancel' to keep playing.")) {
+                if (confirm("Congratulations " + name +"! You made it to space and won the game! \n\nClick 'OK' to win or 'Cancel' to keep playing.")) {
                     document.getElementById('winner').style.display = 'block';
                     window.open("Winner.html");
                 } else {
