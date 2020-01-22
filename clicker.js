@@ -45,9 +45,9 @@ function update() {
 }
 
 function timer(){
-    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
+    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1400) + (brigantines*10850) + (galleons*502425) + (spaceships*1009950);
     
-    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
+    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1400) + (brigantines*10850) + (galleons*502425) + (spaceships*1009950);
     
     manualClick = 1+Math.round(dps*0.1);
     update();
