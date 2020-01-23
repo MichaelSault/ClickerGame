@@ -10,15 +10,10 @@ var spaceships = 0;
 var dps = 0;
 var manualClick = 1;
 var alienTech = 0;
-var name = "temp";
 
 function removeSpaceship() {
     document.getElementById('spaceship').style.display = 'none';
     document.getElementById('winner').style.display = 'none';
-}
-
-function namePrompt() {
-    var name = prompt("Welcome Pirate! What is your name?", "Captain Scurvybeard")
 }
 
 function update() {
@@ -45,9 +40,9 @@ function update() {
 }
 
 function timer(){
-    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1400) + (brigantines*10850) + (galleons*502425) + (spaceships*1009950);
+    balance = balance + Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
     
-    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1400) + (brigantines*10850) + (galleons*502425) + (spaceships*1009950);
+    dps = Scallywags + (pirates*5) + (firstmates*25) + (captains*125) + (sloops*1000) + (brigantines*10000) + (galleons*500000) + (spaceships*1000000);
     
     manualClick = 1+Math.round(dps*0.1);
     update();
@@ -153,7 +148,7 @@ function buySpaceShip() {
 
                 spaceships = spaceships + 1;
                 
-                if (confirm("Congratulations " + name +"! You made it to space and won the game! \n\nClick 'OK' to win or 'Cancel' to keep playing.")) {
+                if (confirm("Congratulations! You made it to space and won the game! \n\nClick 'OK' to win or 'Cancel' to keep playing.")) {
                     document.getElementById('winner').style.display = 'block';
                     window.open("Winner.html");
                 } else {
