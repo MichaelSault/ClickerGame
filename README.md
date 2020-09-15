@@ -3,7 +3,7 @@ A Pirate Clicker Game based on
 
 
 **This game is currently playable at:**
-https://michaelsault.github.io/PirateClickerGame/
+https://pirate.michaelsault.ca
 
 
 The game is "won" by purchasing the "Pirate Space Ship" which in turn requires the Alien Research to unlock.
