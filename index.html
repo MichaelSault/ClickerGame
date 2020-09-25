@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 
-<? php
-    require_once 'clicker.php';
-?>
-
 <html>
-    <div class="nomobile">
-        <div class="topnav">
-            <a class="active">Home</a>
-            <a href="About.html" target="_blank">About</a>
-            <a href="Rules.html" target="_blank">Rules</a>
-            <a href="Leaderboard.html" target="_blank">Leaderboard</a>
-            <div id = "winner"><a href="Winner.html" target="_blank">Click To Win!</a></div>
-        </div>
-    </div>
     <head>
 	<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +11,17 @@
         <title>Doubloon Clicker</title>
         <script src = "clicker.js"></script>
     </head>
+	
+    <div class="nomobile">
+        <div class="topnav">
+            <a class="active">Home</a>
+            <a href="About.html" target="_blank">About</a>
+            <a href="Rules.html" target="_blank">Rules</a>
+            <a href="Leaderboard.html" target="_blank">Leaderboard</a>
+            <div id = "winner"><a href="Winner.html" target="_blank">Click To Win!</a></div>
+        </div>
+    </div>
+    
 
     <body onload="removeSpaceship()">
     	<div id = "mobtop" class = "nomobile">
